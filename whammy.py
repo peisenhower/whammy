@@ -4,6 +4,8 @@
 # import RPi.GPIO as GPIO
 import pygame
 import time
+import threading
+import led
 
 MUSIC_TABLE = {
     "happy-halloween" : "sounds/happy.mp3",
@@ -39,11 +41,13 @@ def main():
     while True:
         if is_button_pressed():
             game()
-        music("laugh")
+        # music("laugh")
         print("playing laugh")
         time.sleep(2)
         # break
         count += 1
+
+        led.fade(count)
 
         if count > 3:
             return
