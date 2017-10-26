@@ -12,10 +12,11 @@ def fade_callback(led):
 
     LED_VALUES[led] -= FADE_INCREMENT
 
-    print(f'Led Update, Led:{led}, Value:{LED_VALUES[led]}')
+    #print(f'Led Update, Led:{led}, Value:{LED_VALUES[led]}')
     # todo i2c call here
     threading.Timer(FADE_INTERVAL, fade_callback, [led]).start()
 
 
 def fade(led):
     threading.Timer(FADE_INTERVAL, fade_callback, [led]).start()
+
