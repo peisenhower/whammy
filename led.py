@@ -4,7 +4,7 @@ import threading
 
 FADE_INTERVAL = 0.2
 FADE_INCREMENT = 10
-LED_VALUES = [100] * 9
+LED_VALUES = [100] * 10 
 
 def fade_callback(led):
     if LED_VALUES[led] <= 0:
@@ -20,3 +20,5 @@ def fade_callback(led):
 def fade(led):
     threading.Timer(FADE_INTERVAL, fade_callback, [led]).start()
 
+def blink(led):
+    pass
